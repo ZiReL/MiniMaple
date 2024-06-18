@@ -102,7 +102,12 @@ public class Term : Atom
         // если переменная sym не равна (<>) переменной одночлена, то производная равна нулю (Number);
         // если показатель степени больше единицы, то производная равна a*k*x^(k-1) (Term);
         // если показатель степени равен единице, то производная равна a*k (Number).
-        throw new NotImplementedException();
+        if (sym != symbol)
+            return new Number(0);
+        if (power == 1)
+            return new Number(coefficient);
+        return new Term(symbol, coefficient * power, power - 1);
+
     }
 
     public override string ToString()
