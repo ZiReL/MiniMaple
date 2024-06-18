@@ -45,8 +45,7 @@ public class Term : Atom
     {
         if (other is Term term)
             // TODO: сравните значения полей
-            // return ...
-            throw new NotImplementedException();
+            return (term.Symbol == symbol && term.Coefficient == coefficient && term.Power == power);
         else
             return false;
     }
