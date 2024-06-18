@@ -55,7 +55,7 @@ public class Term : Atom
         // TODO: реализовать операцию отрицания
         // Указание: создайте новый объект класса Term
         // Подсказка: нужно сменить знак коэффициента
-        throw new NotImplementedException();
+        return new Term(symbol, -coefficient, power);
     }
 
     public override Atom Add(Atom other)
