@@ -90,7 +90,10 @@ public class Term : Atom
         // Указание: аналогично Mul
         // Подсказка: для пересчета коэффициента используйте методы Math и приведение типов.
         // Не забудьте обновить показатель степени!
-        throw new NotImplementedException();
+        Term copy = Copy();
+        copy.coefficient = (int)Math.Pow(coefficient, value);
+        copy.power *= value;
+        return copy;
     }
 
     public override Atom Diff(string sym = "x")
