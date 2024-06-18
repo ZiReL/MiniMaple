@@ -65,7 +65,10 @@ public class Sum : Atom
         // TODO: реализуйте операцию вычитания
         // Указание: аналогично Add
         // Подсказка: используйте метод Neg
-        throw new NotImplementedException();
+        if (rhs == null)
+            return new Sum(lhs, other.Neg());
+        else
+            return new Sum(this, other.Neg());
     }
 
     public override Atom Diff(string sym = "x")
