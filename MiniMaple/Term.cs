@@ -71,7 +71,7 @@ public class Term : Atom
         // TODO: реализуйте операцию вычитания.
         // Указание: аналогично сложению.
         // Подсказка: нужно вызвать метод Neg
-        throw new NotImplementedException();
+        return new Sum(Copy(), other.Neg());
     }
 
     public Term Mul(int value)
