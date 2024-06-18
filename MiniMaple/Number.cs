@@ -52,15 +52,15 @@ public class Number : Atom
     public override Atom Sub(Atom other)
     {
         // TODO: реализовать операцию вычитания аналогично оператору сложения
-        throw new NotImplementedException();
+        if (other is Number number)
+            return new Number(value - number.value);
+        else
+            return null;
     }
 
     public override Atom Diff(string sym = "x")
     {
-        // TODO: реализовать дифференцирование константы
-        // Указание: возвращать нужно новый объект класса Number
-        // Подсказка: производная константы по любой переменной равна нулю
-        throw new NotImplementedException();
+        return new Number(0);
     }
 
     public override string ToString()
