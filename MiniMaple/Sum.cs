@@ -33,7 +33,10 @@ public class Sum : Atom
     {
         // TODO: реализуйте операцию сравнения
         // Указание: сравните значения полей
-        throw new NotImplementedException();
+        if (other is Sum sum)
+            return lhs.Eq(sum.lhs) && rhs.Eq(sum.rhs);
+        else 
+            return false;
     }
 
     public override Atom Neg()
