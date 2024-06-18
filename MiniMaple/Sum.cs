@@ -78,7 +78,8 @@ public class Sum : Atom
         // Производная левой части выражения
         Atom lhs = this.lhs.Diff(sym);
         // TODO: вычислите производную правой части выражения
-        Atom rhs = null;
+        Atom rhs = this.rhs.Diff(sym);
+        //Atom rhs = null;
         var zero = new Number(0);
 
         // Если производные левой и правой части выражения - константы
@@ -90,7 +91,8 @@ public class Sum : Atom
             // то результат - правая часть выражения
             return rhs;
         // TODO: проверить это условия для правой части
-        //  ...
+        else if (rhs.Eq(zero))
+            return lhs;
         else
             // Если обе части не равны нулю, то результат - их сумма
             return new Sum(lhs, rhs);
